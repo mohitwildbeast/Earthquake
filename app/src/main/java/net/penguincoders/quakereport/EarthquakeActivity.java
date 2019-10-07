@@ -33,6 +33,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -142,7 +143,9 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         if (data != null && !data.isEmpty()) {
             mAdapter.addAll(data);
         }
-        mEmptyStateTextView.setText(R.string.no_data_found);
+        //mEmptyStateTextView.setText(R.string.no_data_found);
+
+        Toast.makeText(EarthquakeActivity.this, "No earthquake data found", Toast.LENGTH_SHORT).show();
     }
 
     @Override
